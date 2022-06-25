@@ -1,0 +1,22 @@
+{
+  "name": "redis-pub-sub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'npm run serverA' 'npm run serverB'",
+    "serverA": "DEBUG=worker:* APP_NAME=worker:1 HTTP_PORT=3000 node index",
+    "serverB": "DEBUG=worker:* APP_NAME=worker:2 HTTP_PORT=3001 node index"
+  },
+  "keywords": [],
+  "author": "Lanlyhs",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.3.4",
+    "express": "^4.17.3",
+    "ioredis": "^4.28.5"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
